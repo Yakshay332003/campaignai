@@ -29,6 +29,10 @@ def check_password():
 # Run password check first
 check_password()
 
+HEADERS = {
+    "Authorization": st.secrets["api"]["authorization"],
+    "Content-Type": st.secrets["api"]["content_type"]
+}
 
 API_URL = "https://api.perplexity.ai/chat/completions"
 
