@@ -31,10 +31,7 @@ check_password()
 
 
 API_URL = "https://api.perplexity.ai/chat/completions"
-HEADERS = {
-    "Authorization": st.secrets["api"]["authorization"],
-    "Content-Type": st.secrets["api"]["content_type"]
-}
+
 def extract_json_from_text(text):
     decoder = json.JSONDecoder()
     try:
