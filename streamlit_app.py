@@ -10,10 +10,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 API_URL = "https://api.perplexity.ai/chat/completions"
 
-HEADERS = {
-    "Authorization": "Bearer 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",  
-    "Content-Type": "application/json"
-}
+
 
 def extract_json_from_text(text):
     decoder = json.JSONDecoder()
