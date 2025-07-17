@@ -8,8 +8,26 @@ import time
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-API_URL = "https://api.perplexity.ai/chat/completions"
+# -------------------------------
+# Password Protection Function
+# -------------------------------
+def check_password():
+    def password_entered():
+        if st.session_state["password"] == "your_secret_password":  # Change your password here
+            st.session_state["password_correct"] = True
+            del st.session_state["password"]
+        else:
+            st.session_state["password_correct"] = False
 
+    if "password_correct" not in st.session_state:
+        st.text_input("🔒 Enter password to access the app:", type="password", on_change=password_entered, key="password")
+        st.stop()
+    elif not st.session_state["password_correct"]:
+        st.error("❌ Incorrect password. Please refresh and try again.")
+        st.stop()
+
+# Run password check first
+check_password()
 
 
 def extract_json_from_text(text):
