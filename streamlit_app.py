@@ -13,7 +13,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 # -------------------------------
 def check_password():
     def password_entered():
-        if st.session_state["password"] == "your_secret_password":  # Change your password here
+        if st.session_state["password"] == "campaignai2025":  # Change your password here
             st.session_state["password_correct"] = True
             del st.session_state["password"]
         else:
