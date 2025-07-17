@@ -29,7 +29,7 @@ def check_password():
 # Run password check first
 check_password()
 
-
+API_URL = "https://api.perplexity.ai/chat/completions"
 def extract_json_from_text(text):
     decoder = json.JSONDecoder()
     try:
